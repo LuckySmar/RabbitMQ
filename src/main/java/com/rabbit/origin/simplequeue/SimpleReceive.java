@@ -21,7 +21,7 @@ public class SimpleReceive {
         // 从连接中创建通道
         Channel channel = connection.createChannel();
         // 声明队列
-        channel.queueDeclare(SimpleSend.QUEUE_NAME, false, false, false, null);
+        channel.queueDeclare(SimpleSend.QUEUE_NAME, /*队列名称*/false,/*是否持久化*/ false,/*是否为独占队列*/ false,/*是否自动删除*/ null/*队列的其他参数*/);
 
         // 定义队列的消费者
         QueueingConsumer consumer = new QueueingConsumer(channel);

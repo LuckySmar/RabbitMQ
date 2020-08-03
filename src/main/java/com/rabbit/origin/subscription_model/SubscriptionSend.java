@@ -31,6 +31,7 @@ public class SubscriptionSend {
             String message = "Hello World!"+ UUID.randomUUID().toString();
             channel.basicPublish(EXCHANGE_NAME, ROUTING_KEY, null, message.getBytes());
             System.out.println(" [x] Sent '" + message + "'");
+            Thread.sleep(1000);
         }
         channel.close();
         connection.close();

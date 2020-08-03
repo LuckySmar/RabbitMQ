@@ -36,6 +36,7 @@ public class SimpleSend {
             String message = "Hello World!"+ UUID.randomUUID().toString();
             channel.basicPublish("", QUEUE_NAME, null, message.getBytes());
             System.out.println(" [x] Sent '" + message + "'");
+            Thread.sleep(1000);
         }
         //关闭通道和连接
         channel.close();
